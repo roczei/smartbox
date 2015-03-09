@@ -75,10 +75,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Text
         Button speakButton = (Button) findViewById(R.id.record);
         speakButton.setOnClickListener(this);
 
-        Button ocrButton = (Button) findViewById(R.id.button_ocr);
-        ocrButton.setOnClickListener(this);
-
-
         mText = (EditText) findViewById(R.id.edit);
 
         Button nextButton = (Button) findViewById(R.id.next);

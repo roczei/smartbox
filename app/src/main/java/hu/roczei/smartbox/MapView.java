@@ -22,8 +22,7 @@ import android.support.v4.app.FragmentActivity;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_view);
-        Button nextButton = (Button) findViewById(R.id.back);
-        nextButton.setOnClickListener(this);
+        ((Button) findViewById(R.id.back)).setOnClickListener(this);
         setContentView(R.layout.activity_map_view);
         setUpMapIfNeeded();
     }
