@@ -11,7 +11,7 @@
     <string name="location_title">Aktuális pozíciónk</string>
     <string name="message">Szia! Hogy vagy?</string>
     <string name="message_title">SMS üzenet</string>
-    <string name="mobile_number">+3630</string>
+    <string name="mobile_number"></string>
     <string name="mobile_number_title">Mobil szám</string>
     <string name="record">Rögzítsd</string>
     <string name="say">Olvasd fel</string>
@@ -23,4 +23,5 @@
     <string name="sms_not_sent">SMS elküldése sikertelen</string>
     <string name="sms_sent">SMS elküldve</string>
     <string name="sms_text_title">SMS üzenet szövege:</string>
+    <string name="network_problem">Nincs hálózat</string>
 </resources>

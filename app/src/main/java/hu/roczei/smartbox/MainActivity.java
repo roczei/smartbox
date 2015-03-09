@@ -49,6 +49,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Text
                 String message = intent.getStringExtra("message");
                 mText.setText(message);
                 phoneNumber = intent.getStringExtra("sender");
+                ((EditText) findViewById(R.id.edit2)).setText(phoneNumber);
 
                 if (message != null) {
                     if (!tts.isSpeaking()) {
@@ -117,7 +118,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Text
                         switch (getResultCode()) {
 
                             case Activity.RESULT_OK:
-                                Toast.makeText(getBaseContext(), "Az SMS-t elküldtem a mobil szolgáltatónak",
+                                Toast.makeText(getBaseContext(), getString(R.string.sms_sent),
                                         Toast.LENGTH_SHORT).show();
                                 break;
                             case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
@@ -131,7 +132,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Text
                 registerReceiver(new BroadcastReceiver() {
                     @Override
                     public void onReceive(Context context, Intent intent) {
-                        Toast.makeText(getBaseContext(), "A címzett megkapta az SMS-t",
+                        Toast.makeText(getBaseContext(), getString(R.string.sms_delivered),
                                 Toast.LENGTH_SHORT).show();
                     }
                 }, new IntentFilter(DELIVERED_SMS_ACTION));
@@ -140,7 +141,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Text
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(phoneNumber, null, messageText, sentPendingintent, deliveredPendingintent);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(getBaseContext(), "SMS has not been sent",
+                    Toast.makeText(getBaseContext(), getString(R.string.sms_not_sent),
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -289,14 +290,14 @@ public class MainActivity extends Activity implements View.OnClickListener, Text
         }
 
         if (notConnected) {
-            Toast.makeText(getBaseContext(), "Nincs Internet kapcsolat, ez a funkció most nem használható",
+            Toast.makeText(getBaseContext(), getString(R.string.network_problem),
                     Toast.LENGTH_SHORT).show();
             return;
         }
 
 
         if (v.getId() == R.id.next) {
-            Intent intent = new Intent(this, hu.roczei.smstest.MapView.class);
+            Intent intent = new Intent(this, hu.roczei.smartbox.MapView.class);
             startActivity(intent);
             return;
         }
