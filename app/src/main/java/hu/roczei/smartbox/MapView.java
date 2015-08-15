@@ -1,19 +1,18 @@
 package hu.roczei.smartbox;
 
-import android.os.Bundle;
-import android.widget.Button;
-
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.content.Context;
-import com.google.android.gms.maps.SupportMapFragment;
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
     public class MapView extends FragmentActivity implements LocationListener {
     private GoogleMap mMap;
@@ -22,9 +21,9 @@ import android.support.v4.app.FragmentActivity;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_view);
-        ((Button) findViewById(R.id.back)).setOnClickListener(this);
-        setContentView(R.layout.activity_map_view);
-        setUpMapIfNeeded();
+        //((Button) findViewById(R.id.back)).setOnClickListener(this);
+        //setContentView(R.layout.activity_map_view);
+        //setUpMapIfNeeded();
     }
 
     @Override
